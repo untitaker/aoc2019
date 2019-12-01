@@ -1,3 +1,5 @@
-*
-!*.hs
-!.gitignore
+# binaries have no file extension. ignore files with dots
+*.*
+
+*.o
+*.hi
