@@ -1,5 +1,8 @@
 # binaries have no file extension. ignore files with dots
-*.*
+*
+!/**/
+!*.*
+.git
 
 *.o
 *.hi
