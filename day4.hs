@@ -22,15 +22,7 @@ generateDigits 1 start = [start..9]
 generateDigits n start = sol
     where
     minX = digitAt n start
-    sol = [
-        x * (10 ^ (n-1)) + y |
-        x <- [minX..9],
-        y <- (
-            generateDigits
-            (n-1)
-            (getNewStart n start x)
-         )
-     ]
+    sol = [ x * (10 ^ (n-1)) + y | x <- [minX..9], y <- generateDigits (n-1) (getNewStart n start x) ]
 
 -- calculate new start position for recursive call of generateDigits
 getNewStart n start x | x == minX = max (digitTail start n) digitBounded
